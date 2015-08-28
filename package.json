@@ -2,9 +2,20 @@
   "name": "template",
   "version": "0.1.0",
   "description": "A template for web projects.",
+  "author": "Markus Wüstenberg",
+  "homepage": "https://github.com/markuswustenberg/template#readme",
+  "license": "MIT",
   "main": "source/app.js",
   "directories": {
+    "lib": "source",
     "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/markuswustenberg/template.git"
+  },
+  "bugs": {
+    "url": "https://github.com/markuswustenberg/template/issues"
   },
   "scripts": {
     "build": "npm run clean && cp static/* build/ && browserify -t babelify source/app.js -o build/app.js",
@@ -13,16 +24,6 @@
     "test": "browserify -t babelify tests/app.js | node | faucet",
     "watch": "npm run build && watchify -t babelify source/app.js -o build/app.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/markuswustenberg/template.git"
-  },
-  "author": "Markus Wüstenberg",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/markuswustenberg/template/issues"
-  },
-  "homepage": "https://github.com/markuswustenberg/template#readme",
   "dependencies": {
     "react": "^0.13.3"
   },
