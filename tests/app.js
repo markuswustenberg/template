@@ -1,6 +1,6 @@
 import test from 'tape'
 
-test('tests are working', (t) => {
+test('tests are working', t => {
   t.ok(true)
   t.end()
 })
