@@ -5,7 +5,7 @@
   "author": "Markus Wüstenberg",
   "homepage": "https://github.com/markuswustenberg/template#readme",
   "license": "MIT",
-  "main": "source/app.js",
+  "main": "source/components/app.js",
   "directories": {
     "lib": "source",
     "test": "tests"
