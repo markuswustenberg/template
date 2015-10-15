@@ -25,7 +25,7 @@
     "lint": "eslint source tests",
     "start": "static build",
     "test": "browserify -t babelify tests/app.js | node | faucet",
-    "watch": "npm run clean && npm run copy-static && watchify -v -t babelify source/components/app.js -o build/app.js"
+    "watch": "npm run clean && npm run copy-static && watchify -v -d -t babelify source/components/app.js -o build/app.js"
   },
   "dependencies": {
     "react": "^0.14.0",
