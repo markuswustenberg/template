@@ -3,20 +3,7 @@
   "version": "0.1.0",
   "description": "A template for web projects.",
   "author": "Markus Wüstenberg",
-  "homepage": "https://github.com/markuswustenberg/template",
   "license": "MIT",
-  "main": "source/app.js",
-  "directories": {
-    "lib": "source",
-    "test": "tests"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/markuswustenberg/template.git"
-  },
-  "bugs": {
-    "url": "https://github.com/markuswustenberg/template/issues"
-  },
   "scripts": {
     "browser": "opn http://localhost:8080",
     "build": "npm run clean && npm run copy-static && browserify -t [ babelify --presets [ es2015 react ] ] source/app.js -o build/app.js",
