@@ -5,7 +5,6 @@
   "author": "Markus Wüstenberg",
   "license": "MIT",
   "scripts": {
-    "browser": "opn http://localhost:8080",
     "build": "npm run clean && npm run copy-static && browserify -t [ babelify --presets [ es2015 react ] ] source/app.js -o build/app.js",
     "clean": "mkdir -p build && rm -rf build/*",
     "copy-static": "cp static/* build/",
@@ -27,7 +26,6 @@
     "eslint-plugin-react": "latest",
     "faucet": "latest",
     "node-static": "latest",
-    "opn-cli": "latest",
     "tape": "latest",
     "watchify": "latest"
   }
