@@ -5,13 +5,13 @@
   "author": "Markus Wüstenberg",
   "license": "MIT",
   "scripts": {
-    "build": "npm run clean && npm run copy-static && browserify -t [ babelify --presets [ es2015 react ] ] source/app.js -o build/app.js",
+    "build": "npm run clean && npm run copy-static && browserify -t [ babelify ] source/app.js -o build/app.js",
     "clean": "mkdir -p build && rm -rf build/*",
     "copy-static": "cp static/* build/",
     "lint": "eslint source tests",
     "start": "static build",
-    "test": "browserify -t [ babelify --presets [ es2015 react ] ] tests/app.js | node | faucet",
-    "watch": "npm run clean && npm run copy-static && watchify -v -d -t [ babelify --presets [ es2015 react ] ] source/app.js -o build/app.js"
+    "test": "browserify -t [ babelify ] tests/app.js | node | faucet",
+    "watch": "npm run clean && npm run copy-static && watchify -v -d -t [ babelify ] source/app.js -o build/app.js"
   },
   "dependencies": {
     "react": "^0.14.2",
@@ -20,6 +20,7 @@
   "devDependencies": {
     "babel-preset-es2015": "latest",
     "babel-preset-react": "latest",
+    "babel-preset-stage-2": "latest",
     "babelify": "latest",
     "browserify": "latest",
     "eslint": "latest",
