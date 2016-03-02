@@ -5,7 +5,7 @@
   "author": "Markus Wüstenberg",
   "license": "MIT",
   "scripts": {
-    "build": "npm run clean && npm run copy-static && browserify -t [ babelify ] source/app.js -o build/app.js",
+    "build": "npm run clean && npm run copy-static && NODE_ENV=production browserify -t [ babelify ] source/app.js | uglifyjs - -m -c -o build/app.js",
     "clean": "mkdir -p build && rm -rf build/*",
     "copy-static": "cp static/* build/",
     "lint": "eslint source tests",
@@ -28,6 +28,7 @@
     "faucet": "latest",
     "node-static": "latest",
     "tape": "latest",
+    "uglify-js": "latest",
     "watchify": "latest"
   }
 }
