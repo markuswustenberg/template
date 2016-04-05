@@ -1,3 +1,3 @@
 # template
 
-A template for web projects.
+An opinionated template for web projects.
