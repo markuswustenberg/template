@@ -10,7 +10,7 @@
     "copy-static": "cp -a static/* build/",
     "lint": "eslint source tests",
     "start": "static build",
-    "test": "browserify -t [ babelify ] tests/app.js | node | faucet",
+    "test": "npm run lint && browserify -t [ babelify ] tests/app.js | node | faucet",
     "watch": "npm run clean && npm run copy-static && watchify -v -d -t [ babelify ] source/app.js -o build/app.js"
   },
   "dependencies": {
