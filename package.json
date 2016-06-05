@@ -10,7 +10,7 @@
     "copy-static": "cp -a static/* build/",
     "lint": "eslint source tests",
     "start": "static build",
-    "test": "browserify -t [ babelify ] tests/app.js | node | faucet",
+    "test": "npm run lint && browserify -t [ babelify ] tests/app.js | node | faucet",
     "watch": "npm run clean && npm run copy-static && watchify -v -d -t [ babelify ] source/app.js -o build/app.js"
   },
   "dependencies": {
@@ -27,8 +27,8 @@
     "babel-preset-stage-2": "latest",
     "babelify": "latest",
     "browserify": "latest",
-    "eslint": "latest",
-    "eslint-plugin-react": "latest",
+    "eslint": "^2.11.1",
+    "eslint-plugin-react": "^5.1.1",
     "faucet": "latest",
     "node-static": "latest",
     "tape": "latest",
