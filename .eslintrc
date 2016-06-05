@@ -1,9 +1,6 @@
-extends: 'eslint:recommended'
-ecmaFeatures:
-  arrowFunctions: true
-  experimentalObjectRestSpread: true
-  modules: true
-  jsx: true
+extends:
+  - 'eslint:recommended'
+  - 'plugin:react/recommended'
 env:
   browser: true
   es6: true
@@ -22,3 +19,10 @@ rules:
   semi:
     - 2
     - never
+  react/prop-types: 0
+parserOptions:
+  ecmaVersion: 7
+  ecmaFeatures:
+    jsx: true
+    experimentalObjectRestSpread: true
+  sourceType: module
