@@ -3,7 +3,6 @@ extends:
   - 'plugin:react/recommended'
 env:
   browser: true
-  es6: true
 plugins:
   - react
 rules:
@@ -21,8 +20,8 @@ rules:
     - never
   react/prop-types: 0
 parserOptions:
-  ecmaVersion: 7
+  ecmaVersion: 8
   ecmaFeatures:
-    jsx: true
     experimentalObjectRestSpread: true
+    jsx: true
   sourceType: module

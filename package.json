@@ -23,17 +23,17 @@
     "redux-thunk": "^2.1.0"
   },
   "devDependencies": {
-    "babel-preset-es2015": "latest",
-    "babel-preset-react": "latest",
-    "babel-preset-stage-2": "latest",
-    "babelify": "latest",
-    "browserify": "latest",
-    "eslint": "^2.11.1",
-    "eslint-plugin-react": "^5.1.1",
-    "faucet": "latest",
-    "node-static": "latest",
-    "tape": "latest",
-    "uglify-js": "latest",
-    "watchify": "latest"
+    "babel-plugin-transform-object-rest-spread": "^6.16.0",
+    "babel-preset-latest": "^6.16.0",
+    "babel-preset-react": "^6.16.0",
+    "babelify": "^7.3.0",
+    "browserify": "^13.1.0",
+    "eslint": "^3.8.1",
+    "eslint-plugin-react": "^6.4.1",
+    "faucet": "^0.0.1",
+    "node-static": "^0.7.9",
+    "tape": "^4.6.2",
+    "uglify-js": "^2.7.3",
+    "watchify": "^3.7.0"
   }
 }
