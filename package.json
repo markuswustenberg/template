@@ -5,20 +5,21 @@
   "author": "Markus Wüstenberg",
   "license": "MIT",
   "scripts": {
-    "build": "npm run clean && npm run copy-static && NODE_ENV=production browserify -t [ babelify ] source/app.js | uglifyjs - -m -c -o build/app.js",
-    "clean": "mkdir -p build && rm -rf build/*",
+    "build": "yarn run clean && yarn run copy-static && NODE_ENV=production browserify -t [ babelify ] source/app.js | uglifyjs - -m -c -o build/app.js",
+    "clean": "mkdir -p build && mkdir -p docs && rm -rf build/* && rm -rf docs/*",
     "copy-static": "cp -a static/* build/",
     "lint": "eslint source tests",
+    "publish": "mkdir -p docs && yarn run build && cp -a build/ docs",
     "start": "static build",
-    "test": "npm run lint && browserify -t [ babelify ] tests/app.js | node | faucet",
-    "watch": "npm run clean && npm run copy-static && watchify -v -d -t [ babelify ] source/app.js -o build/app.js"
+    "test": "yarn run lint && browserify -t [ babelify ] tests/app.js | node | faucet",
+    "watch": "yarn run clean && yarn run copy-static && watchify -v -d -t [ babelify ] source/app.js -o build/app.js"
   },
   "dependencies": {
-    "react": "^15.1.0",
-    "react-dom": "^15.1.0",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
     "react-redux": "^4.4.5",
-    "redux": "^3.5.2",
-    "redux-logger": "^2.6.1",
+    "redux": "^3.6.0",
+    "redux-logger": "^2.7.0",
     "redux-thunk": "^2.1.0"
   },
   "devDependencies": {
