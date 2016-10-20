@@ -5,14 +5,14 @@
   "author": "Markus Wüstenberg",
   "license": "MIT",
   "scripts": {
-    "build": "yarn run clean && yarn run copy-static && NODE_ENV=production browserify -t [ babelify ] source/app.js | uglifyjs - -m -c -o build/app.js",
-    "clean": "mkdir -p build && mkdir -p docs && rm -rf build/* && rm -rf docs/*",
-    "copy-static": "cp -a static/* build/",
-    "lint": "eslint source tests",
-    "publish": "mkdir -p docs && yarn run build && cp -a build/ docs",
+    "build": "yarn run clean && yarn run copy-statics && NODE_ENV=production browserify -t [ babelify ] sources/app.js | uglifyjs - -m -c -o build/app.js",
+    "clean": "mkdir -p build && rm -rf build/*",
+    "copy-statics": "cp -a statics/* build/",
+    "lint": "eslint sources tests",
+    "publish": "mkdir -p docs && rm -rf docs/* && yarn run build && cp -a build/ docs",
     "start": "static build",
     "test": "yarn run lint && browserify -t [ babelify ] tests/app.js | node | faucet",
-    "watch": "yarn run clean && yarn run copy-static && watchify -v -d -t [ babelify ] source/app.js -o build/app.js"
+    "watch": "yarn run clean && yarn run copy-statics && watchify -v -d -t [ babelify ] sources/app.js -o build/app.js"
   },
   "dependencies": {
     "react": "^15.3.2",
