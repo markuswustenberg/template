@@ -5,7 +5,7 @@ class Container extends React.Component {
   render() {
     return (
       <div>
-        <h1>❤ template</h1>
+        <h1>😎 template</h1>
         <p>Initialized: {`${this.props.app.initialized}`}</p>
       </div>
     )
