@@ -7,7 +7,8 @@
   "scripts": {
     "build": "yarn run clean && yarn run copy-statics && NODE_ENV=production browserify -t [ babelify ] sources/app.js | uglifyjs - -m -c -o build/app.js",
     "clean": "mkdir -p build && rm -rf build/*",
-    "copy-statics": "cp -a statics/* build/",
+    "copy-normalize": "mkdir -p build/styles && cleancss -o build/styles/normalize.min.css node_modules/normalize.css/normalize.css",
+    "copy-statics": "yarn run copy-normalize && cp -a statics/* build/",
     "lint": "eslint sources tests",
     "publish": "mkdir -p docs && rm -rf docs/* && yarn run build && cp -a build/ docs",
     "start": "static build",
@@ -15,6 +16,7 @@
     "watch": "yarn run clean && yarn run copy-statics && watchify -v -d -t [ babelify ] sources/app.js -o build/app.js"
   },
   "dependencies": {
+    "normalize.css": "^5.0.0",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "react-redux": "^4.4.5",
@@ -30,6 +32,7 @@
     "babel-preset-react": "^6.16.0",
     "babelify": "^7.3.0",
     "browserify": "^13.1.0",
+    "clean-css": "^3.4.20",
     "eslint": "^3.8.1",
     "eslint-plugin-react": "^6.4.1",
     "faucet": "^0.0.1",
