@@ -20,8 +20,10 @@ rules:
     - never
   react/prop-types: 0
 parserOptions:
-  ecmaVersion: 8
+  ecmaVersion: 9
   ecmaFeatures:
-    experimentalObjectRestSpread: true
     jsx: true
   sourceType: module
+settings:
+  react:
+    version: "16"
